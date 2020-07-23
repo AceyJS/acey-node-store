@@ -1,0 +1,33 @@
+{
+  "name": "acey-node-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "clean": "rm -rf dist",
+    "cleanf": "yarn clean && rm -rf node_modules"
+  },
+  "author": "@fantasim",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@types/node": "^14.0.24",
+    "rollup": "^2.22.2",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.7.5"
+  }
+}
