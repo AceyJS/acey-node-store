@@ -9,7 +9,9 @@
     "clean": "rm -rf dist",
     "cleanf": "yarn clean && rm -rf node_modules"
   },
-  "author": "@fantasim",
+  "files": [
+    "dist/**"
+  ],
   "license": "ISC",
   "repository": {
     "type": "git",
