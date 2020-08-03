@@ -36,5 +36,5 @@ class LocalStorage {
     public removeItem = (key: string) => fs.unlinkSync(this._getFullDocumentPath(key))
 }
 
-module.exports = LocalStorage
+export default LocalStorage
 
