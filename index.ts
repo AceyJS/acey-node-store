@@ -15,11 +15,15 @@ class LocalStorage {
         return path.resolve(this._dbFolderPath, key) + `.json`
     }
 
-    public setItem = (key: string, data: any) => {
+    public setItem = async (key: string, data: any): Promise<void> => {
         try {
-            fs.writeFile(this._getFullDocumentPath(key), typeof data !== 'string' ? JSON.stringify(data) : data, {encoding: 'utf8'}, (err) => {
-                if (err)
-                    throw new Error(err as any)
+            return new Promise((resolve, reject) => {
+                fs.writeFile(this._getFullDocumentPath(key), typeof data !== 'string' ? JSON.stringify(data) : data, {encoding: 'utf8'}, (err) => {
+                    if (err)
+                        reject(err as any)
+                    else
+                        resolve()
+                })
             })
         } catch (e){
             throw new Error(e as any)
